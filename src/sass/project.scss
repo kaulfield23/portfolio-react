@@ -1,0 +1,20 @@
+.aboutMe {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #83706b;
+
+  .project-title {
+    color: #83706b;
+    font-family: "Titan one";
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+  .project-imgs {
+    img {
+      width: 450px;
+      height: 300px;
+    }
+  }
+}

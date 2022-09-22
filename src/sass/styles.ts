@@ -1,3 +1,3 @@
 import "./home.scss";
-import "./aboutMe.scss";
+import "./project.scss";
 import "./index.scss";

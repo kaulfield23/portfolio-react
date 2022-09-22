@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import AboutMe from "./components/AboutMe";
+import Project from "./components/Project";
 import { CustomText } from "./components/customMUI/CustomText";
 
 const Home = () => {
@@ -17,11 +17,14 @@ const Home = () => {
                 padding: "50px",
               }}
             >
-              <Typography variant="h3">Hello, my name is Haeju.</Typography>
+              <Typography variant="h3">Hello, I am Haeju.</Typography>
               <CustomText>
-                I'm a student of Lernia YH Systemutvecklare i Java & Javascript{" "}
-                <br />
-                Check out my projects and hobby
+                <CustomText sx={{ fontWeight: "800", color: " #3c6149" }}>
+                  from South Korea.
+                </CustomText>
+                <br />I like to experiment new things and draw. I'm currently on
+                my third semester of Lernia YH systemutvecklare i Java & JS.
+                Here you can find my projects from school and my own.
               </CustomText>
             </Box>
           </Box>
@@ -44,7 +47,7 @@ const Home = () => {
           </svg>
         </Box>
       </Box>
-      <AboutMe />
+      <Project />
     </>
   );
 };
