@@ -1,16 +1,23 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Grow } from "@mui/material";
+import { useState } from "react";
 import wordle1 from "../img/window.png";
-// type projectType = {
-//   activateCarousel: (input: string) => void;
-// };
+import CarouselWithImg from "./CarouselWithImg";
+
 const Project = () => {
-  const activateCarousel = (input: string) => {
-    console.log(input);
+  const [inputImgTxt, setInputImg] = useState<string>("");
+  const setText = (value: string) => {
+    setInputImg(value);
   };
   return (
     <>
       <Box className="aboutMe" sx={{ position: "absolute", zIndex: 1 }}>
-        <span className="project-title">Project</span>
+        <Grow
+          in={true}
+          style={{ transformOrigin: "0 0 0" }}
+          {...{ timeout: 3000 }}
+        >
+          <span className="project-title">Project</span>
+        </Grow>
         <Box
           sx={{
             marginTop: "30px",
@@ -29,7 +36,7 @@ const Project = () => {
             >
               <Box
                 onClick={() => {
-                  activateCarousel("wordle");
+                  setInputImg("wordle");
                 }}
               >
                 <img src={wordle1}></img>
@@ -37,6 +44,9 @@ const Project = () => {
             </Box>
           </Box>
         </Box>
+        {inputImgTxt !== "" && (
+          <CarouselWithImg input={inputImgTxt} setText={setText} />
+        )}
       </Box>
     </>
   );
