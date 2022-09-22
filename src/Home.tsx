@@ -17,15 +17,13 @@ const Home = () => {
                 padding: "50px",
               }}
             >
-              <Typography variant="h3">Hello, I am Haeju.</Typography>
-              <CustomText>
-                <CustomText sx={{ fontWeight: "800", color: " #3c6149" }}>
-                  from South Korea.
-                </CustomText>
-                <br />I like to experiment new things and draw. I'm currently on
-                my third semester of Lernia YH systemutvecklare i Java & JS.
-                Here you can find my projects from school and my own.
-              </CustomText>
+              <span className="intro-title">Hello, I am Haeju.</span>
+              <br />
+              <span className="intro-desc">from South Korea.</span>
+              <br />
+              <br />I like to experiment new things and draw. I'm currently on
+              my third semester of Lernia YH systemutvecklare i Java & JS. Here
+              you can find my projects from school and my own.
             </Box>
           </Box>
           <svg

@@ -1,13 +1,16 @@
 import { Box, Typography } from "@mui/material";
 import wordle1 from "../img/window.png";
-
-import { CustomText } from "./customMUI/CustomText";
-
+// type projectType = {
+//   activateCarousel: (input: string) => void;
+// };
 const Project = () => {
+  const activateCarousel = (input: string) => {
+    console.log(input);
+  };
   return (
     <>
       <Box className="aboutMe" sx={{ position: "absolute", zIndex: 1 }}>
-        <Typography className="project-title">Project</Typography>
+        <span className="project-title">Project</span>
         <Box
           sx={{
             marginTop: "30px",
@@ -24,7 +27,13 @@ const Project = () => {
               className="project-imgs"
               sx={{ border: "2px solid #b2e8c5", height: "100%" }}
             >
-              <img src={wordle1}></img>
+              <Box
+                onClick={() => {
+                  activateCarousel("wordle");
+                }}
+              >
+                <img src={wordle1}></img>
+              </Box>
             </Box>
           </Box>
         </Box>
