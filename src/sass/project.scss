@@ -1,4 +1,6 @@
-.aboutMe {
+@import "./mixins.scss";
+@import "./variable.scss";
+.project {
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -12,9 +14,43 @@
     font-size: 2rem;
   }
   .project-imgs {
+    padding: 2.6rem 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     img {
       width: 450px;
       height: 300px;
+      @include mobile {
+        width: 300px;
+        height: 250px;
+      }
+    }
+    .project-type {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: center;
+      color: rgb(255, 255, 255);
+      span {
+        color: #161615;
+        max-width: 300px;
+        margin: 0 auto;
+      }
+      .project-box {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin: 10px auto;
+        p {
+          background-color: #83706b;
+          margin: 3px;
+          padding: 2px;
+          border-radius: 5px;
+          max-width: 100px;
+        }
+      }
     }
   }
 }

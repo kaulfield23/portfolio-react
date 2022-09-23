@@ -1,48 +1,51 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, Modal } from "@mui/material";
 import { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import testImg from "../img/testImg.png";
-import wordleImg from "../img/window.png";
+import wordle2 from "../img/wordle2.png";
+import wordle3 from "../img/wordle3.png";
+import wordle4 from "../img/wordle4.png";
+import cinema2 from "../img/cinema2.png";
+import cinema3 from "../img/cinema3.png";
+import cinema4 from "../img/cinema4.png";
 
 type Props = {
-  input: string;
-  setText: (value: string) => void;
+  inputIndex: number;
+  setNumber: (value: number) => void;
 };
 
-const CarouselWithImg = ({ input, setText }: Props) => {
+const CarouselWithImg = ({ inputIndex, setNumber }: Props) => {
+  const imgList = [
+    {
+      file: [wordle2, wordle3, wordle4],
+      text: `A limitless word guess game ${(
+        <br />
+      )}. The server will only send result of the guessing word, so user won't be able to cheat ${(
+        <br />
+      )} Users can see their scores in high score page.`,
+    },
+    {
+      file: [cinema2, cinema3, cinema4],
+      text: "Group project : cinema website",
+    },
+  ];
   return (
     <>
-      <Box>
-        <Box sx={{ margin: "0 auto" }}>
+      <Modal open={inputIndex !== 100} onClose={() => setNumber(100)}>
+        <Box className="modal-box">
           <Carousel>
-            <Carousel.Item>
-              <img className="d-block w-100" src={testImg} alt="First slide" />
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={wordleImg}
-                alt="Second slide"
-              />
-
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
+            {imgList[inputIndex].file.map((item, idx) => {
+              return (
+                <Carousel.Item key={idx}>
+                  <img className="d-block w-100" src={item} alt="First slide" />
+                  <Carousel.Caption>
+                    {/* <p>{imgList[inputIndex].text}</p> */}
+                  </Carousel.Caption>
+                </Carousel.Item>
+              );
+            })}
           </Carousel>
         </Box>
-      </Box>
-
-      <Button variant="contained" color="primary" onClick={() => setText("")}>
-        close
-      </Button>
+      </Modal>
     </>
   );
 };

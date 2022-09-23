@@ -1,28 +1,55 @@
+@import "./mixins.scss";
+@import "./variable.scss";
 .home {
   .title {
-    background: url("../img/testImg.png") no-repeat 10% 60%;
+    background: url("../img/profile3.png") no-repeat 4% 220px;
+    background-size: 800px 800px;
     padding-top: 50px;
     position: relative;
     background-color: #88cba0;
+
+    @include small-window {
+      background-size: 300px 300px;
+      background-position: 1% 300px;
+    }
+    @include mobile {
+      background-size: 250px 250px;
+      background-position: 0px 320px;
+    }
     .intro-title {
       font-family: "Dosis";
       font-weight: 800;
       color: #3c6149;
       font-size: 3rem;
+      @include small-window {
+        font-size: 1.5rem;
+      }
     }
-    .intro-desc {
+    .intro-from {
       font-family: "Dosis";
       font-weight: 800;
       color: #3c6149;
+      @include small-window {
+        font-size: 0.7rem;
+      }
+    }
+    .intro-desc {
+      @include small-window {
+        font-size: 12px;
+      }
     }
 
     .intro-bubble {
       position: relative;
-      margin: 0 0% 0 30%;
+      margin: 0 0% 0 33%;
       padding: 20px;
       border-radius: 25px;
       width: 600px;
       background-color: #f9f7ad;
+      @include small-window {
+        width: 220px;
+        padding: 5px;
+      }
     }
 
     .intro-bubble:after {
