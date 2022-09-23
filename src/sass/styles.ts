@@ -4,4 +4,5 @@ import "./home.scss";
 import "./project.scss";
 import "./index.scss";
 import "./modal.scss";
+import "./drawinglists.scss";
 import "bootstrap/dist/css/bootstrap.min.css";

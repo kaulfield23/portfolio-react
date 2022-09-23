@@ -6,10 +6,12 @@
   right: 0;
   text-align: center;
   color: #83706b;
+  font-family: "Dosis";
 
   .project-title {
     color: #83706b;
-    font-family: "Titan one";
+    font-family: "Dosis";
+    font-weight: 800;
     margin-top: 1rem;
     font-size: 2rem;
   }
@@ -44,7 +46,10 @@
         align-items: center;
         margin: 10px auto;
         p {
-          background-color: #83706b;
+          // background-color: #83706b;
+          background-color: #f79880;
+          color: black;
+
           margin: 3px;
           padding: 2px;
           border-radius: 5px;

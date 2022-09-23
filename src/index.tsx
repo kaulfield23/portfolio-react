@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-// import "./index.scss";
 import "./sass/styles.ts";
 import Home from "./Home";
 import reportWebVitals from "./reportWebVitals";

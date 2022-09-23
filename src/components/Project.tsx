@@ -1,4 +1,4 @@
-import { Box, Grow, ImageList } from "@mui/material";
+import { Box, Grow, ImageList, Tooltip } from "@mui/material";
 import { useState } from "react";
 import wordle1 from "../img/wordle1.png";
 import cinema1 from "../img/cinema1.png";
@@ -15,6 +15,7 @@ const Project = () => {
     {
       img: wordle1,
       indexNum: 0,
+      tooltip: "No demo",
       responsive: "✔️",
       text: <h5>Wordle</h5>,
       used: [
@@ -39,14 +40,15 @@ const Project = () => {
     {
       img: cinema1,
       indexNum: 1,
+      tooltip: "No demo",
       responsive: "❌",
       text: <h5>Risbäck Cinema</h5>,
       used: ["Typescript", "Next.js", "Material UI", "Cypress", "MongoDB"],
       desc: (
         <span>
           A cinema website with log in function. Users can leave the reviews and
-          check their information as well. Some pages are made of SSR.
-          <br /> Used bycrypt for encoding the password. Database only saves
+          check their information as well. Some pages are SSR.
+          <br /> Used bycrypt for encoding the passwords. Database only saves
           hash from bcrypt for the password. Therefore it is secure at the same
           time.
         </span>
@@ -55,6 +57,7 @@ const Project = () => {
     {
       img: esc1,
       indexNum: 2,
+      tooltip: "Check demo",
       responsive: "✔️",
       text: <h5>ESC hacker escape rooms</h5>,
       used: ["Javascript", "SASS"],
@@ -68,16 +71,20 @@ const Project = () => {
   ];
   return (
     <>
-      <Box
-        className="project"
-        sx={{ position: "absolute", zIndex: 1, backgroundColor: "#fefff0" }}
-      >
+      <Box className="project" sx={{ backgroundColor: "#fefff0" }}>
         <Grow
           in={true}
           style={{ transformOrigin: "0 0 0" }}
           {...{ timeout: 3000 }}
         >
-          <span className="project-title">Project</span>
+          <Box
+            sx={{
+              position: "relative",
+              zIndex: 1,
+            }}
+          >
+            <span className="project-title">Project</span>
+          </Box>
         </Grow>
         <Box
           sx={{
@@ -94,21 +101,32 @@ const Project = () => {
             >
               {imgList.map((item, idx) => {
                 return (
-                  <Box
-                    key={idx}
-                    onClick={() => {
-                      setInputImgNumber(item.indexNum);
-                    }}
-                  >
-                    <img src={item.img}></img>
-                    <span>{item.text}</span>
+                  <Box key={idx}>
+                    <Box
+                      onClick={() => {
+                        if (item.indexNum !== 2) {
+                          setInputImgNumber(item.indexNum);
+                        } else {
+                          window.open(
+                            "https://kaulfield23.github.io/ESC-CSS/",
+                            "_blank"
+                          );
+                        }
+                      }}
+                      sx={{ cursor: "pointer" }}
+                    >
+                      <Tooltip title={item.tooltip} arrow>
+                        <img src={item.img}></img>
+                      </Tooltip>
+                    </Box>
+                    <span className="project-title">{item.text}</span>
                     <SmartphoneIcon />
                     {item.responsive}
                     <Box className="project-type" sx={{ mt: 1 }}>
                       {item.desc}
                       <Box className="project-box">
                         {item.used.map((text, index) => {
-                          return <p>{text}</p>;
+                          return <p key={index}>{text}</p>;
                         })}
                       </Box>
                     </Box>

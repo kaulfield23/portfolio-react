@@ -1,7 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import React from "react";
 import Project from "./components/Project";
-import { CustomText } from "./components/customMUI/CustomText";
+import ImageListProject from "./components/ImageList";
 
 const Home = () => {
   return (
@@ -47,8 +47,9 @@ const Home = () => {
             ></path>
           </svg>
         </Box>
+        <Project />
+        <ImageListProject />
       </Box>
-      <Project />
     </>
   );
 };
