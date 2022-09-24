@@ -5,6 +5,8 @@ import cinema1 from "../img/cinema1.png";
 import esc1 from "../img/esc1.png";
 import CarouselWithImg from "./CarouselWithImg";
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
+import playlist from "../img/playlist1.png";
+import myboard from "../img/myboard.png";
 const Project = () => {
   const [inputImgIndex, setInputImgNumber] = useState<number>(100);
   const setText = (value: number) => {
@@ -25,6 +27,7 @@ const Project = () => {
         "Express",
         "MongoDB",
         "Jest",
+        "Handlebars",
       ],
       desc: (
         <span>
@@ -46,8 +49,8 @@ const Project = () => {
       used: ["Typescript", "Next.js", "Material UI", "Cypress", "MongoDB"],
       desc: (
         <span>
-          A cinema website with log in function. Users can leave the reviews and
-          check their information as well. Some pages are SSR.
+          Group project - A cinema website with log in function. Users can leave
+          the reviews and check their information as well. Some pages are SSR.
           <br /> Used bycrypt for encoding the passwords. Database only saves
           hash from bcrypt for the password. Therefore it is secure at the same
           time.
@@ -65,6 +68,37 @@ const Project = () => {
         <span>
           Fully responsive website. Used SASS for CSS codes and 'Flickity'
           library for card carousel in mobile mode.
+        </span>
+      ),
+    },
+    {
+      img: playlist,
+      indexNum: 3,
+      tooltip: "No demo",
+      responsive: "✔️",
+      text: <h5>My playlist</h5>,
+      used: ["Typescript", "Next.js", "SASS", "Material UI", "Spotify API"],
+      desc: (
+        <span>
+          Music playing website that can check your playlist from Spotify API.
+          Used intersection observer to load new song lists and songs. Token
+          will be refreshed after certain amount of time. Used
+          React-spotify-web-playback library for the player.
+        </span>
+      ),
+    },
+    {
+      img: myboard,
+      indexNum: 4,
+      tooltip: "No demo",
+      responsive: "✔️",
+      text: <h5>My little board</h5>,
+      used: ["Typescript", "Next.js", "Material UI", "Docker", "PostgreSQL"],
+      desc: (
+        <span>
+          Working on mini SNS with login. Docker for using PostgreSQL locally.
+          User would see their posts with their name that is saved in local
+          database.
         </span>
       ),
     },
@@ -104,6 +138,9 @@ const Project = () => {
                   <Box key={idx}>
                     <Box
                       onClick={() => {
+                        if (item.indexNum === 4) {
+                          return;
+                        }
                         if (item.indexNum !== 2) {
                           setInputImgNumber(item.indexNum);
                         } else {

@@ -1,87 +1,81 @@
-import * as React from "react";
+import React, { useState } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import ImageListItemBar from "@mui/material/ImageListItemBar";
 import greenThum from "../img/drawings/color green-thum.jpg";
-import greenFull from "../img/drawings/color green-full.jpg";
 import monsterThum from "../img/drawings/color monster-thumb.jpg";
 import judyThum from "../img/drawings/color judy-thumb.jpg";
 import beasts from "../img/drawings/beasts.jpg";
-import banner from "../img/drawings/colorBanner.jpg";
 import nikThum from "../img/drawings/color nik-thumb.jpg";
 import pragThum from "../img/drawings/color prag-thumb.jpg";
 import shadow from "../img/drawings/shadowEx.jpg";
-import { Box } from "@mui/material";
+import catThum from "../img/drawings/color cat-thumb.jpg";
+import spiritFarer from "../img/drawings/spiritfarerEx.jpg";
+import redhoodThum from "../img/drawings/red hood-thumb.jpg";
+import rogerThum from "../img/drawings/pencil rodger-thumb.jpg";
+import mattThum from "../img/drawings/pencil matt-thumb.jpg";
+import totoroThum from "../img/drawings/sketch totoro-thumb.jpg";
+import manThum from "../img/drawings/sketch man-thumb.jpg";
 
-export default function ImageListProject() {
+import { Box } from "@mui/material";
+import DrawingModal from "./DrawingModal";
+
+const ImageListProject = () => {
+  const [drawingIndexNum, setDrawingIndexNum] = useState(100);
+  const itemList = [
+    beasts,
+    greenThum,
+    monsterThum,
+    judyThum,
+    rogerThum,
+    mattThum,
+    pragThum,
+    shadow,
+    spiritFarer,
+    redhoodThum,
+    nikThum,
+    catThum,
+    totoroThum,
+    manThum,
+  ];
   return (
     <>
-      <Box
-        className="drawing-title"
-        sx={{ padding: { xs: "50px 0", sm: "200px 0" } }}
-      >
-        <h1>My drawings</h1>
-        <img src={banner}></img>
+      <Box className="drawings">
+        <Box
+          sx={{
+            width: { xs: 300, sm: 500, md: 800, lg: 1000, xl: 1200 },
+            margin: {
+              xs: "50px auto",
+              sm: "200px auto",
+            },
+          }}
+        >
+          <h1>My drawings</h1>
+          <ImageList variant="masonry" cols={3} gap={8}>
+            {itemList.map((item, index) => (
+              <ImageListItem
+                key={index}
+                sx={{ cursor: "pointer" }}
+                className="drawings"
+                onClick={() => {
+                  setDrawingIndexNum(index);
+                }}
+              >
+                <img
+                  src={`${item}?w=248&fit=crop&auto=format`}
+                  srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                  loading="lazy"
+                />
+              </ImageListItem>
+            ))}
+          </ImageList>
+        </Box>
       </Box>
-      <Box
-        sx={{
-          width: { xs: 300, sm: 800 },
-          height: 800,
-          overflowY: "scroll",
-          m: "50px auto",
-        }}
-      >
-        <ImageList variant="masonry" cols={3} gap={8}>
-          {itemData.map((item) => (
-            <ImageListItem key={item.img}>
-              <img
-                src={`${item.img}?w=248&fit=crop&auto=format`}
-                srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                alt={item.title}
-                loading="lazy"
-              />
-            </ImageListItem>
-          ))}
-        </ImageList>
-      </Box>
+      <DrawingModal
+        drawingIndexNum={drawingIndexNum}
+        setDrawingIndexNum={setDrawingIndexNum}
+      />
     </>
   );
-}
+};
 
-const itemData = [
-  {
-    img: beasts,
-    title: "wordle2",
-    author: "@bkristastucchio",
-  },
-  {
-    img: greenThum,
-    title: "wordle3",
-    author: "@rollelflex_graphy726",
-  },
-  {
-    img: monsterThum,
-    title: "wordle3",
-    author: "@rollelflex_graphy726",
-  },
-  {
-    img: judyThum,
-    title: "wordle3",
-    author: "@rollelflex_graphy726",
-  },
-  {
-    img: nikThum,
-    title: "wordle3",
-    author: "@rollelflex_graphy726",
-  },
-  {
-    img: pragThum,
-    title: "wordle3",
-    author: "@rollelflex_graphy726",
-  },
-  {
-    img: shadow,
-    title: "wordle3",
-    author: "@rollelflex_graphy726",
-  },
-];
+export default ImageListProject;

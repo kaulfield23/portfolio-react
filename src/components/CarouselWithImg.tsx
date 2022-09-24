@@ -7,6 +7,9 @@ import wordle4 from "../img/wordle4.png";
 import cinema2 from "../img/cinema2.png";
 import cinema3 from "../img/cinema3.png";
 import cinema4 from "../img/cinema4.png";
+import playlist2 from "../img/playlist2.png";
+import playlist3 from "../img/playlist3.png";
+import playlist4 from "../img/playlist4.png";
 
 type Props = {
   inputIndex: number;
@@ -17,15 +20,15 @@ const CarouselWithImg = ({ inputIndex, setNumber }: Props) => {
   const imgList = [
     {
       file: [wordle2, wordle3, wordle4],
-      text: `A limitless word guess game ${(
-        <br />
-      )}. The server will only send result of the guessing word, so user won't be able to cheat ${(
-        <br />
-      )} Users can see their scores in high score page.`,
     },
     {
       file: [cinema2, cinema3, cinema4],
-      text: "Group project : cinema website",
+    },
+    {
+      file: [""],
+    },
+    {
+      file: [playlist2, playlist3, playlist4],
     },
   ];
   return (
@@ -37,9 +40,7 @@ const CarouselWithImg = ({ inputIndex, setNumber }: Props) => {
               return (
                 <Carousel.Item key={idx}>
                   <img className="d-block w-100" src={item} alt="First slide" />
-                  <Carousel.Caption>
-                    {/* <p>{imgList[inputIndex].text}</p> */}
-                  </Carousel.Caption>
+                  <Carousel.Caption></Carousel.Caption>
                 </Carousel.Item>
               );
             })}
