@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import greenThum from "../img/drawings/color green-thum.jpg";
@@ -16,10 +16,12 @@ import mattThum from "../img/drawings/pencil matt-thumb.jpg";
 import totoroThum from "../img/drawings/sketch totoro-thumb.jpg";
 import manThum from "../img/drawings/sketch man-thumb.jpg";
 
-import { Box } from "@mui/material";
+import { Box, Grow, Zoom } from "@mui/material";
 import DrawingModal from "./DrawingModal";
 
 const ImageListProject = () => {
+  const [open, setOpen] = useState(false);
+  const drawingRef = useRef<HTMLDivElement>(null);
   const [drawingIndexNum, setDrawingIndexNum] = useState(100);
   const itemList = [
     beasts,
@@ -37,6 +39,24 @@ const ImageListProject = () => {
     totoroThum,
     manThum,
   ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(async (entries) => {
+      const first = entries[0];
+      if (first.isIntersecting) {
+        setOpen(true);
+      }
+    });
+    const currentObserver = drawingRef.current;
+    if (drawingRef.current !== null) {
+      observer.observe(drawingRef.current);
+    }
+    return () => {
+      if (currentObserver) {
+        observer.unobserve(currentObserver);
+      }
+    };
+  }, [drawingRef]);
   return (
     <>
       <Box className="drawings">
@@ -49,23 +69,29 @@ const ImageListProject = () => {
             },
           }}
         >
-          <h1>My drawings</h1>
+          <h1 ref={drawingRef}>My drawings</h1>
+
           <ImageList variant="masonry" cols={3} gap={8}>
             {itemList.map((item, index) => (
-              <ImageListItem
-                key={index}
-                sx={{ cursor: "pointer" }}
-                className="drawings"
-                onClick={() => {
-                  setDrawingIndexNum(index);
-                }}
+              <Zoom
+                in={open}
+                style={{ transitionDelay: open ? `${index}00ms` : "0ms" }}
               >
-                <img
-                  src={`${item}?w=248&fit=crop&auto=format`}
-                  srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                  loading="lazy"
-                />
-              </ImageListItem>
+                <ImageListItem
+                  key={index}
+                  sx={{ cursor: "pointer" }}
+                  className="drawings darken"
+                  onClick={() => {
+                    setDrawingIndexNum(index);
+                  }}
+                >
+                  <img
+                    src={`${item}?w=248&fit=crop&auto=format`}
+                    srcSet={`${item}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    loading="lazy"
+                  />
+                </ImageListItem>
+              </Zoom>
             ))}
           </ImageList>
         </Box>

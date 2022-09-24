@@ -3,12 +3,14 @@ import ReactDOM from "react-dom/client";
 import "./sass/styles.ts";
 import Home from "./Home";
 import reportWebVitals from "./reportWebVitals";
+import Navbar from "./components/Navbar";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <Navbar />
     <Home />
   </React.StrictMode>
 );
