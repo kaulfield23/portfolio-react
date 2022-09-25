@@ -1,5 +1,4 @@
-import { Box, Button, Modal } from "@mui/material";
-import { useState } from "react";
+import { Box, Modal } from "@mui/material";
 import Carousel from "react-bootstrap/Carousel";
 import wordle2 from "../img/wordle2.png";
 import wordle3 from "../img/wordle3.png";

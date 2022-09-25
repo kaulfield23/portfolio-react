@@ -1,12 +1,7 @@
 import { Box } from "@mui/material";
-import React from "react";
 import Project from "./components/Project";
 import ImageListProject from "./components/ImageList";
 import AboutMe from "./components/AboutMe";
-
-type SendRefProps = {
-  reference: (value: HTMLElement) => void;
-};
 
 const Home = () => {
   return (

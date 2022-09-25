@@ -1,4 +1,4 @@
-import { Box, Grow, Slide, Tooltip } from "@mui/material";
+import { Box, Grow, Tooltip } from "@mui/material";
 import { useContext, useEffect, useRef, useState } from "react";
 import wordle1 from "../img/wordle1.png";
 import cinema1 from "../img/cinema1.png";
@@ -151,9 +151,10 @@ const imgList = [
     desc: (
       <span>
         Group project - A cinema website with log in function. Users can leave
-        the reviews and check their information as well. Some pages are SSR.
-        <br /> Used bycrypt for encoding the passwords. Database only saves hash
-        from bcrypt for the password. Therefore it is secure at the same time.
+        the reviews and check their information. Some pages are rendered with
+        SSR.
+        <br /> Used bycrypt to encode user password. Database only saves hash
+        from bcrypt for the password.
       </span>
     ),
     github: "https://github.com/kaulfield23/Cinema-next",
@@ -167,8 +168,8 @@ const imgList = [
     used: ["Javascript", "SASS"],
     desc: (
       <span>
-        Fully responsive website. Used SASS for CSS codes and 'Flickity' library
-        for card carousel in mobile mode.
+        Fully responsive website. Used SASS to write stylesheet and 'Flickity'
+        library to create the card carousel in mobile mode.
       </span>
     ),
     github: "https://github.com/kaulfield23/ESC-CSS",
@@ -182,9 +183,9 @@ const imgList = [
     used: ["Typescript", "Next.js", "SASS", "Material UI", "Spotify API"],
     desc: (
       <span>
-        Music playing website that can check your playlist from Spotify API.
-        Used intersection observer to load new song lists and songs. Token will
-        be refreshed after certain amount of time. Used
+        Music playing website. A web page that shows your spotify playlist. Made
+        using the Spotify API. Used intersection observer to load new song lists
+        and songs. Token will be refreshed after certain amount of time. Used
         React-spotify-web-playback library for the player.
       </span>
     ),
@@ -199,9 +200,9 @@ const imgList = [
     used: ["Typescript", "Next.js", "Material UI", "Docker", "PostgreSQL"],
     desc: (
       <span>
-        Working on mini SNS with login. Docker for using PostgreSQL locally.
-        User would see their posts with their name that is saved in local
-        database.
+        Working on mini SNS with login. Used Docker to run an instance of
+        PostgreSQL. Database is used to store user posts with their name,
+        content and date posted.
       </span>
     ),
     github: "https://github.com/kaulfield23/my-little-board",

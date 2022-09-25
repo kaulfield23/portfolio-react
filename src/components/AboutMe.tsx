@@ -47,7 +47,7 @@ const AboutMe = () => {
         className="aboutme"
         sx={{
           textAlign: "center",
-          m: 3,
+          paddingBottom: "100px",
           marginTop: { xs: "200px", sm: "400px" },
         }}
         ref={aboutmeRef}
@@ -55,6 +55,7 @@ const AboutMe = () => {
         <h1>About Me</h1>
         <Box
           sx={{
+            mt: 3,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",

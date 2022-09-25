@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import {
   Drawer,
   IconButton,
@@ -69,7 +69,7 @@ const DrawerMUI = () => {
                 padding: "13px",
               }}
             >
-              ABOUT ME
+              About me
             </ListItemText>
           </ListItemButton>
         </List>

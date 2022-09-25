@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { styled } from "@mui/material/styles";
 import {
   AppBar,
@@ -9,7 +9,6 @@ import {
   useTheme,
   Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
 import Drawer from "./Drawer";
 import { MenuContext } from "./MenuContext";
 
