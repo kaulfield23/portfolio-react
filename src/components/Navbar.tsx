@@ -36,7 +36,7 @@ const Navbar = () => {
   const theme = useTheme();
   const isMobileSize = useMediaQuery(theme.breakpoints.down("md"));
   const { changeSwitchMenuTo } = useContext(MenuContext);
-  const menus = ["Project", "Drawings"];
+  const menus = ["Project", "Drawings", "About me"];
 
   return (
     <>

@@ -1,0 +1,11 @@
+@import "./mixins.scss";
+@import "./variable.scss";
+
+.aboutme {
+  color: rgb(94, 80, 80);
+  img {
+    @include mobile {
+      width: 150px;
+    }
+  }
+}

@@ -55,7 +55,9 @@ const DrawerMUI = () => {
           })}
           <Divider />
           <ListItemButton
-            onClick={() => setOpenDrawer(false)}
+            onClick={() => {
+              setOpenDrawer(false), changeSwitchMenuTo("About me");
+            }}
             key={Math.random()}
           >
             <ListItemText

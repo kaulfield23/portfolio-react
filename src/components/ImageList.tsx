@@ -15,6 +15,8 @@ import rogerThum from "../img/drawings/pencil rodger-thumb.jpg";
 import mattThum from "../img/drawings/pencil matt-thumb.jpg";
 import totoroThum from "../img/drawings/sketch totoro-thumb.jpg";
 import manThum from "../img/drawings/sketch man-thumb.jpg";
+import remiThum from "../img/drawings/color remi-thumb.jpg";
+import rainbowThum from "../img/drawings/color rainbow-thumb.jpg";
 
 import { Box, Zoom } from "@mui/material";
 import DrawingModal from "./DrawingModal";
@@ -31,14 +33,16 @@ const ImageListProject = () => {
     judyThum,
     rogerThum,
     mattThum,
-    pragThum,
+    remiThum,
     shadow,
     spiritFarer,
     redhoodThum,
-    nikThum,
-    catThum,
     totoroThum,
+    catThum,
+    nikThum,
     manThum,
+    pragThum,
+    rainbowThum,
   ];
   const { switchMenuTo } = useContext(MenuContext);
 

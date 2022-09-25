@@ -5,4 +5,5 @@ import "./project.scss";
 import "./index.scss";
 import "./modal.scss";
 import "./drawings.scss";
+import "./aboutme.scss";
 import "bootstrap/dist/css/bootstrap.min.css";

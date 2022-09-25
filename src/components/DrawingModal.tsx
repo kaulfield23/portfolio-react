@@ -13,6 +13,9 @@ import roger from "../img/drawings/pencil rodger-full.jpg";
 import matt from "../img/drawings/pencil matt-full.jpg";
 import totoro from "../img/drawings/sketch totoro-full.jpg";
 import man from "../img/drawings/sketch man-full.jpg";
+import remi from "../img/drawings/color remi-full.jpg";
+import rainbow from "../img/drawings/color rainbow-full.jpg";
+
 import { Zoom } from "@mui/material";
 
 type DrawingModalProps = {
@@ -30,14 +33,16 @@ const DrawingModal = ({
     judy,
     roger,
     matt,
-    prag,
+    remi,
     shadow,
     spiritFarer,
     redhood,
-    nik,
-    cat,
     totoro,
+    cat,
+    nik,
     man,
+    prag,
+    rainbow,
   ];
   return (
     <>
