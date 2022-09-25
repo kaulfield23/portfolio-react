@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   Drawer,
   IconButton,
@@ -10,14 +10,15 @@ import {
 } from "@mui/material";
 
 import MenuIcon from "@mui/icons-material/Menu";
+import { MenuContext } from "./MenuContext";
+import { Box } from "@mui/system";
 
-const menus = [
-  { name: "Project", path: "/playlist" },
-  { name: "Drawings", path: "/myProfile" },
-];
+const menus = ["Project", "Drawings"];
 
 const DrawerMUI = () => {
   const [openDrawer, setOpenDrawer] = useState(false);
+  const { changeSwitchMenuTo } = useContext(MenuContext);
+
   return (
     <>
       <Drawer
@@ -28,7 +29,12 @@ const DrawerMUI = () => {
         <List>
           {menus.map((menu, index) => {
             return (
-              <a href={menu.path} key={index} className="anchor">
+              <Box
+                onClick={() => {
+                  changeSwitchMenuTo(menu);
+                }}
+                key={index}
+              >
                 <ListItemButton onClick={() => setOpenDrawer(false)}>
                   <ListItemIcon>
                     <ListItemText
@@ -40,11 +46,11 @@ const DrawerMUI = () => {
                         padding: "13px",
                       }}
                     >
-                      {menu.name}
+                      {menu}
                     </ListItemText>
                   </ListItemIcon>
                 </ListItemButton>
-              </a>
+              </Box>
             );
           })}
           <Divider />
@@ -52,19 +58,17 @@ const DrawerMUI = () => {
             onClick={() => setOpenDrawer(false)}
             key={Math.random()}
           >
-            <a href="/aboutme" className="anchor">
-              <ListItemText
-                primaryTypographyProps={{
-                  color: "#3a4172",
-                  fontWeight: "bold",
-                  fontFamily: "Nunito",
-                  variant: "body2",
-                  padding: "13px",
-                }}
-              >
-                ABOUT ME
-              </ListItemText>
-            </a>
+            <ListItemText
+              primaryTypographyProps={{
+                color: "#3a4172",
+                fontWeight: "bold",
+                fontFamily: "Nunito",
+                variant: "body2",
+                padding: "13px",
+              }}
+            >
+              ABOUT ME
+            </ListItemText>
           </ListItemButton>
         </List>
       </Drawer>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
 import {
   AppBar,
@@ -9,10 +9,9 @@ import {
   useTheme,
   Typography,
 } from "@mui/material";
-
 import { Box } from "@mui/system";
-import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import Drawer from "./Drawer";
+import { MenuContext } from "./MenuContext";
 
 const CustomTab = styled(Tab, {
   shouldForwardProp: (props) => props !== "sx",
@@ -24,10 +23,10 @@ const CustomTab = styled(Tab, {
   fontFamily: "Dosis",
   opacity: 1,
   "&:hover": {
-    color: "#500950",
+    color: "#2f4433",
   },
   "&.Mui-selected": {
-    color: "#500950",
+    color: "#2f4433",
     fontWeight: "bold",
   },
 }));
@@ -36,20 +35,8 @@ const Navbar = () => {
   const [value, setValue] = useState<number>(0);
   const theme = useTheme();
   const isMobileSize = useMediaQuery(theme.breakpoints.down("md"));
-
-  const menus = [
-    { name: "Project", path: "/myProfile" },
-    { name: "Drawings", path: "/aboutme" },
-  ];
-
-  //   useEffect(() => {
-  //     const pathMenu = ["/playlist", "/myProfile", "/aboutme"];
-  //     const currentPath = pathMenu.findIndex((item) => item === path);
-  //     if (currentPath === -1) {
-  //       return;
-  //     }
-  //     setValue(currentPath);
-  //   }, []);
+  const { changeSwitchMenuTo } = useContext(MenuContext);
+  const menus = ["Project", "Drawings"];
 
   return (
     <>
@@ -78,16 +65,16 @@ const Navbar = () => {
                 sx={{ marginLeft: "auto" }}
                 value={value}
                 onChange={(e, value) => setValue(value)}
-                indicatorColor="primary"
-                textColor="primary"
               >
                 {menus.map((menu, index) => {
                   return (
-                    <a href={menu.path} key={index}>
-                      <Box onClick={() => setValue(index)}>
-                        <CustomTab label={menu.name} />
-                      </Box>
-                    </a>
+                    <CustomTab
+                      label={menu}
+                      onClick={() => {
+                        setValue(index), changeSwitchMenuTo(menu);
+                      }}
+                      key={index}
+                    />
                   );
                 })}
               </Tabs>

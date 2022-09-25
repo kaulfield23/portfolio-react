@@ -1,5 +1,5 @@
 import { Box, Grow, Slide, Tooltip } from "@mui/material";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import wordle1 from "../img/wordle1.png";
 import cinema1 from "../img/cinema1.png";
 import esc1 from "../img/esc1.png";
@@ -9,12 +9,21 @@ import playlist from "../img/playlist1.png";
 import myboard from "../img/myboard.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ComputerIcon from "@mui/icons-material/Computer";
+import { MenuContext } from "./MenuContext";
+
 const Project = () => {
   const [inputImgIndex, setInputImgNumber] = useState<number>(100);
   const setText = (value: number) => {
     setInputImgNumber(value);
   };
+  const projectRef = useRef<HTMLElement>(null);
+  const { switchMenuTo } = useContext(MenuContext);
 
+  useEffect(() => {
+    if (switchMenuTo === "Project" && projectRef.current !== null) {
+      projectRef.current.scrollIntoView();
+    }
+  }, [switchMenuTo]);
   return (
     <>
       <Box className="project" sx={{ backgroundColor: "#fefff0" }}>
@@ -29,7 +38,9 @@ const Project = () => {
               zIndex: 1,
             }}
           >
-            <span className="project-title">Project</span>
+            <span className="project-title" ref={projectRef}>
+              Project
+            </span>
           </Box>
         </Grow>
         <Box

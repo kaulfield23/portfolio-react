@@ -3,6 +3,10 @@ import React from "react";
 import Project from "./components/Project";
 import ImageListProject from "./components/ImageList";
 
+type SendRefProps = {
+  reference: (value: HTMLElement) => void;
+};
+
 const Home = () => {
   return (
     <>

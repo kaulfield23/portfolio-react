@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import greenThum from "../img/drawings/color green-thum.jpg";
@@ -16,8 +16,9 @@ import mattThum from "../img/drawings/pencil matt-thumb.jpg";
 import totoroThum from "../img/drawings/sketch totoro-thumb.jpg";
 import manThum from "../img/drawings/sketch man-thumb.jpg";
 
-import { Box, Grow, Zoom } from "@mui/material";
+import { Box, Zoom } from "@mui/material";
 import DrawingModal from "./DrawingModal";
+import { MenuContext } from "./MenuContext";
 
 const ImageListProject = () => {
   const [open, setOpen] = useState(false);
@@ -39,8 +40,13 @@ const ImageListProject = () => {
     totoroThum,
     manThum,
   ];
+  const { switchMenuTo } = useContext(MenuContext);
 
   useEffect(() => {
+    if (switchMenuTo === "Drawings" && drawingRef.current !== null) {
+      drawingRef.current.scrollIntoView();
+    }
+    //intersection observer
     const observer = new IntersectionObserver(async (entries) => {
       const first = entries[0];
       if (first.isIntersecting) {
@@ -56,7 +62,7 @@ const ImageListProject = () => {
         observer.unobserve(currentObserver);
       }
     };
-  }, [drawingRef]);
+  }, [drawingRef, switchMenuTo]);
   return (
     <>
       <Box className="drawings">
@@ -76,9 +82,9 @@ const ImageListProject = () => {
               <Zoom
                 in={open}
                 style={{ transitionDelay: open ? `${index}00ms` : "0ms" }}
+                key={index}
               >
                 <ImageListItem
-                  key={index}
                   sx={{ cursor: "pointer" }}
                   className="drawings darken"
                   onClick={() => {

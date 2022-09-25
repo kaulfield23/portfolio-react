@@ -1,17 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./sass/styles.ts";
 import Home from "./Home";
 import reportWebVitals from "./reportWebVitals";
 import Navbar from "./components/Navbar";
+import MenuContextProvider from "./components/MenuContext";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+
 root.render(
   <React.StrictMode>
-    <Navbar />
-    <Home />
+    <MenuContextProvider>
+      <Navbar />
+      <Home />
+    </MenuContextProvider>
   </React.StrictMode>
 );
 
