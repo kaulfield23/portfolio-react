@@ -18,9 +18,7 @@ const Home = () => {
               }}
             >
               <span className="intro-title">Hello, I am Haeju.</span>
-              <br />
-              <span className="intro-from">from South Korea.</span>
-              <br />
+              
               <br />
               <span className="intro-desc">
                 I like to experiment new things and draw. I'm currently on my
