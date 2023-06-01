@@ -3,10 +3,11 @@ import { useContext, useEffect, useRef, useState } from "react";
 import wordle1 from "../img/wordle1.png";
 import cinema1 from "../img/cinema1.png";
 import esc1 from "../img/esc1.png";
+import frontway1 from "../img/frontway1.png";
 import CarouselWithImg from "./CarouselWithImg";
 import SmartphoneIcon from "@mui/icons-material/Smartphone";
 import playlist from "../img/playlist1.png";
-import myboard from "../img/myboard.png";
+import board1 from "../img/board1.png";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ComputerIcon from "@mui/icons-material/Computer";
 import { MenuContext } from "./MenuContext";
@@ -61,9 +62,6 @@ const Project = () => {
                   <Box key={idx}>
                     <Box
                       onClick={() => {
-                        if (item.indexNum === 4) {
-                          return;
-                        }
                         if (item.indexNum !== 2) {
                           setInputImgNumber(item.indexNum);
                         } else {
@@ -81,16 +79,18 @@ const Project = () => {
                     </Box>
                     <span className="project-title">{item.text}</span>
                     {item.responsive && (
-                      <SmartphoneIcon sx={{ mr: 1, color: "darkred" }} />
+                      <Tooltip title={"Responsive"}>
+                        <SmartphoneIcon sx={{ mr: 1, color: "darkred" }} />
+                      </Tooltip>
                     )}
                     <ComputerIcon sx={{ mr: 1, color: "darkblue" }} />
-                    <GitHubIcon
+                    {item.github !== "" && <GitHubIcon
                       className="darken"
                       sx={{ cursor: "pointer", color: "olive" }}
                       onClick={() => {
                         window.open(item.github, "_blank");
                       }}
-                    />
+                    />}
                     <Box className="project-type" sx={{ mt: 1 }}>
                       {item.desc}
                       <Box className="project-box">
@@ -192,7 +192,7 @@ const imgList = [
     github: "https://github.com/kaulfield23/My-playlist-next-ts",
   },
   {
-    img: myboard,
+    img: board1,
     indexNum: 4,
     tooltip: "No demo",
     responsive: true,
@@ -206,6 +206,29 @@ const imgList = [
       </span>
     ),
     github: "https://github.com/kaulfield23/my-little-board",
+  },
+  {
+    img: frontway1,
+    indexNum: 5,
+    tooltip: "No demo",
+    responsive: true,
+    text: <h5>Frontway - Examensarbete</h5>,
+    used: [
+      "Typescript",
+      "React.js",
+      "Material UI",
+      "Express",
+    ],
+    desc: (
+      <span>
+        Rebuild a demo product
+        <br />
+        It can communicate with Extendsim and show the results of simulations
+        <br />
+        Designed by myself
+      </span>
+    ),
+    github: "",
   },
 ];
 export default Project;
