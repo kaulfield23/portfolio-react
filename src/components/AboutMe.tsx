@@ -62,7 +62,7 @@ const AboutMe = () => {
           }}
           className="aboutme"
         >
-          <img src={me} />
+          <img src={me} alt="me"/>
           <Box>
             {aboutmeList.map((item, index) => {
               return (

@@ -70,7 +70,8 @@ const Navbar = () => {
                     <CustomTab
                       label={menu}
                       onClick={() => {
-                        setValue(index), changeSwitchMenuTo(menu);
+                        setValue(index);
+                        changeSwitchMenuTo(menu);
                       }}
                       key={index}
                     />

@@ -21,9 +21,9 @@ const Home = () => {
               
               <br />
               <span className="intro-desc">
-                I like to experiment new things and draw. I'm currently on my
-                third semester of Lernia YH systemutvecklare i Java & JS. Here
-                you can find my projects from school and my own.
+                I like to experiment new things and draw.
+                I recently graduated from Lernia YH as a software developer specializing in Java and JavaScript.
+                You can find my school projects as well as my personal projects here.
               </span>
             </Box>
           </Box>

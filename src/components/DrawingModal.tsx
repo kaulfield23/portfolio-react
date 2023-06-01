@@ -16,8 +16,6 @@ import man from "../img/drawings/sketch man-full.jpg";
 import remi from "../img/drawings/color remi-full.jpg";
 import rainbow from "../img/drawings/color rainbow-full.jpg";
 
-import { Zoom } from "@mui/material";
-
 type DrawingModalProps = {
   drawingIndexNum: number;
   setDrawingIndexNum: (value: number) => void;
