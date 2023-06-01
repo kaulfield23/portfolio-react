@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio-react/static/css/main.40123559.css",
-    "main.js": "/portfolio-react/static/js/main.6bd7dd54.js",
+    "main.js": "/portfolio-react/static/js/main.ee72aa72.js",
     "static/js/787.aeca62f9.chunk.js": "/portfolio-react/static/js/787.aeca62f9.chunk.js",
     "static/media/profile3.png": "/portfolio-react/static/media/profile3.4720793ef8ef95b60ad6.png",
     "static/media/color rainbow-full.jpg": "/portfolio-react/static/media/color rainbow-full.6e8c91b9a0c9de7a38ef.jpg",
@@ -9,6 +9,7 @@
     "static/media/cinema1.png": "/portfolio-react/static/media/cinema1.2c43525e9bb9d6f3c999.png",
     "static/media/color cat-full.jpg": "/portfolio-react/static/media/color cat-full.190d827b3ce735e12571.jpg",
     "static/media/pencil matt-full.jpg": "/portfolio-react/static/media/pencil matt-full.9b6ec4c7ff11a034861b.jpg",
+    "static/media/frontway1.png": "/portfolio-react/static/media/frontway1.a21e02d4916ba5839745.png",
     "static/media/cinema2.png": "/portfolio-react/static/media/cinema2.96eb8e6836c494740733.png",
     "static/media/color prag-full.jpg": "/portfolio-react/static/media/color prag-full.ce0695bcef9345fd366c.jpg",
     "static/media/cinema4.png": "/portfolio-react/static/media/cinema4.5064de7ff0f7fdf25924.png",
@@ -34,8 +35,10 @@
     "static/media/playlist3.png": "/portfolio-react/static/media/playlist3.27bdba785cb519d3fdcd.png",
     "static/media/color cat-thumb.jpg": "/portfolio-react/static/media/color cat-thumb.acce97681f805486a7ac.jpg",
     "static/media/color prag-thumb.jpg": "/portfolio-react/static/media/color prag-thumb.78260a631bb3fdd20734.jpg",
+    "static/media/frontway3.png": "/portfolio-react/static/media/frontway3.c1efd68547736faff787.png",
     "static/media/pencil matt-thumb.jpg": "/portfolio-react/static/media/pencil matt-thumb.ffdd8a7f8d1adff4fc78.jpg",
     "static/media/red hood-thumb.jpg": "/portfolio-react/static/media/red hood-thumb.2621fffc0d59dd85fc56.jpg",
+    "static/media/frontway2.png": "/portfolio-react/static/media/frontway2.0da7273d70616acba041.png",
     "static/media/color judy-thumb.jpg": "/portfolio-react/static/media/color judy-thumb.83c9d1bac82873ef4808.jpg",
     "static/media/color nik-thumb.jpg": "/portfolio-react/static/media/color nik-thumb.ed53387f139229731d4e.jpg",
     "static/media/playlist4.png": "/portfolio-react/static/media/playlist4.1be4313b74c37fe4eecf.png",
@@ -44,17 +47,20 @@
     "static/media/color remi-thumb.jpg": "/portfolio-react/static/media/color remi-thumb.2ef16e083cdeeea04f4f.jpg",
     "static/media/wordle2.png": "/portfolio-react/static/media/wordle2.fba337355b5e4441bca0.png",
     "static/media/wordle3.png": "/portfolio-react/static/media/wordle3.908da961182f8656285b.png",
+    "static/media/board1.png": "/portfolio-react/static/media/board1.f4799a3b35737f0ddfc0.png",
     "static/media/wordle1.png": "/portfolio-react/static/media/wordle1.dc9cace9cb5f3ebf35a0.png",
     "static/media/color monster-thumb.jpg": "/portfolio-react/static/media/color monster-thumb.ab323e2f09b5c91c81c7.jpg",
     "static/media/pencil rodger-thumb.jpg": "/portfolio-react/static/media/pencil rodger-thumb.4733d24c7243e531ab26.jpg",
-    "static/media/myboard.png": "/portfolio-react/static/media/myboard.3d0f222695a85200943b.png",
+    "static/media/board3.png": "/portfolio-react/static/media/board3.c95f12c7b9e3d712e59a.png",
+    "static/media/board4.png": "/portfolio-react/static/media/board4.323ce9ca522e5f900b97.png",
+    "static/media/board2.png": "/portfolio-react/static/media/board2.318d7f3357b4ef205e1d.png",
     "index.html": "/portfolio-react/index.html",
     "main.40123559.css.map": "/portfolio-react/static/css/main.40123559.css.map",
-    "main.6bd7dd54.js.map": "/portfolio-react/static/js/main.6bd7dd54.js.map",
+    "main.ee72aa72.js.map": "/portfolio-react/static/js/main.ee72aa72.js.map",
     "787.aeca62f9.chunk.js.map": "/portfolio-react/static/js/787.aeca62f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.40123559.css",
-    "static/js/main.6bd7dd54.js"
+    "static/js/main.ee72aa72.js"
   ]
 }
