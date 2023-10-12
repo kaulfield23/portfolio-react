@@ -44,14 +44,6 @@ const Project = () => {
             </span>
           </Box>
         </Grow>
-        <Box
-          sx={{
-            marginTop: "30px",
-            backgroundColor: "#fcfaea",
-            border: "10px solid #b2e8c5",
-            padding: "2% 20px",
-          }}
-        >
           <Box sx={{ border: "2px solid #b2e8c5", padding: "5px" }}>
             <Box
               className="project-imgs"
@@ -104,7 +96,6 @@ const Project = () => {
               })}
             </Box>
           </Box>
-        </Box>
         {inputImgIndex !== 100 && (
           <CarouselWithImg inputIndex={inputImgIndex} setNumber={setText} />
         )}

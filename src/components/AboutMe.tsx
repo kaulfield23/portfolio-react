@@ -1,36 +1,34 @@
 import { Box } from "@mui/material";
 import me from "../img/drawings/me.png";
-import EmailIcon from "@mui/icons-material/Email";
-import SmartphoneIcon from "@mui/icons-material/Smartphone";
-import CakeIcon from "@mui/icons-material/Cake";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import {Email, Smartphone, Cake,Favorite,LocationOn,GitHub,Facebook,Person} from "@mui/icons-material"
 import { useContext, useEffect, useRef } from "react";
 import { MenuContext } from "./MenuContext";
 
 const AboutMe = () => {
   const aboutmeList = [
     {
-      icon: <CakeIcon sx={{ mr: 1, color: "#a5d6aa" }} />,
+      icon: <Person sx={{ mr: 1, color: "darkgrey" }} />,
+      desc: ": Haeju Eom",
+    },
+    {
+      icon: <Cake sx={{ mr: 1, color: "#a5d6aa" }} />,
       desc: ": 1991.08.23",
     },
     {
-      icon: <FavoriteIcon sx={{ mr: 1, color: "#ff7878" }} />,
+      icon: <Favorite sx={{ mr: 1, color: "#ff7878" }} />,
       desc: ": Drawing, Playing game",
     },
     {
-      icon: <LocationOnIcon sx={{ mr: 1, color: "#a178ff" }} />,
+      icon: <LocationOn sx={{ mr: 1, color: "#a178ff" }} />,
       desc: ": Linköping, Sweden",
     },
     {
-      icon: <EmailIcon sx={{ mr: 1, color: "#f2d467" }} />,
+      icon: <Email sx={{ mr: 1, color: "#f2d467" }} />,
       desc: ": kaulfield23@gmail.com",
     },
 
     {
-      icon: <SmartphoneIcon sx={{ mr: 1, color: "#a18161" }} />,
+      icon: <Smartphone sx={{ mr: 1, color: "#a18161" }} />,
       desc: ": 0721509466",
     },
   ];
@@ -82,14 +80,14 @@ const AboutMe = () => {
               );
             })}
             <Box>
-              <GitHubIcon
+              <GitHub
                 sx={{ mr: 1, color: "black", cursor: "pointer" }}
                 className="darken"
                 onClick={() => {
                   window.open("https://github.com/kaulfield23", "_blank");
                 }}
               />
-              <FacebookIcon
+              <Facebook
                 sx={{ color: "#5555b9", cursor: "pointer" }}
                 className="darken"
                 onClick={() => {

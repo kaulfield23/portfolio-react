@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Project from "./components/Project";
 import ImageListProject from "./components/ImageList";
 import AboutMe from "./components/AboutMe";
@@ -8,25 +8,7 @@ const Home = () => {
     <>
       <Box className="home">
         <Box className="title">
-          <Box className="intro-bubble">
-            <Box
-              sx={{
-                border: "2px solid #805f57",
-                margin: "2px",
-                borderRadius: "15px",
-                padding: "25px",
-              }}
-            >
-              <span className="intro-title">Hello, I am Haeju.</span>
-              
-              <br />
-              <span className="intro-desc">
-                I like to experiment new things and draw.
-                I recently graduated from Lernia YH as a software developer specializing in Java and JavaScript.
-                You can find my school projects as well as my personal projects here.
-              </span>
-            </Box>
-          </Box>
+          <Typography variant="h1" sx={{ fontFamily: 'Dosis', textAlign: 'center', pt: 10, color: '#3c6149', fontSize: { xs: '50px', xl: '80px' }, fontWeight: 'bold' }}>Portfolio</Typography>
           <svg
             width="100%"
             height="100%"
