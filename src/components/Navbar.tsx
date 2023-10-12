@@ -43,19 +43,17 @@ const Navbar = () => {
         <Toolbar>
           {isMobileSize ? (
             <>
-              <a href="/" className="anchor">
-                <Typography
-                  sx={{
-                    marginLeft: "20px",
-                    fontFamily: "Dosis",
-                    fontWeight: "bold",
-                    color: "#3c6149",
-                    cursor: "pointer",
-                  }}
-                >
-                  Haeju Eom
-                </Typography>
-              </a>
+              <Typography
+                sx={{
+                  marginLeft: "20px",
+                  fontFamily: "Dosis",
+                  fontWeight: "bold",
+                  color: "white",
+
+                }}
+              >
+                Haeju Eom
+              </Typography>
               <Drawer />
             </>
           ) : (
