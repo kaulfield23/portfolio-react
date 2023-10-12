@@ -25,7 +25,7 @@ const CustomTab = styled(Tab, {
     color: "#2f4433",
   },
   "&.Mui-selected": {
-    color: "#2f4433",
+    color: "#e2da6a",
     fontWeight: "bold",
   },
 }));
@@ -39,7 +39,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar sx={{ backgroundColor: "#88cba0" }} position="sticky">
+      <AppBar sx={{ backgroundColor: "#685ea0" }} elevation={0} position="sticky">
         <Toolbar>
           {isMobileSize ? (
             <>
@@ -61,7 +61,15 @@ const Navbar = () => {
           ) : (
             <>
               <Tabs
-                sx={{ marginLeft: "auto" }}
+                sx={{
+                  marginLeft: "auto",
+                }}
+                TabIndicatorProps={{
+                  style: {
+                    backgroundColor: "#D97D54",
+                  }
+                }}
+
                 value={value}
                 onChange={(e, value) => setValue(value)}
               >

@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <Box className="home">
         <Box className="title">
-          <Typography variant="h1" sx={{ fontFamily: 'Dosis', textAlign: 'center', pt: 10, color: '#3c6149', fontSize: { xs: '50px', xl: '80px' }, fontWeight: 'bold' }}>Portfolio</Typography>
+          <Typography variant="h1" sx={{ fontFamily: 'Dosis', textAlign: 'center', pt: 10, color: '#fefff0', fontSize: { xs: '50px', xl: '80px' }, fontWeight: 'bold' }}>Portfolio</Typography>
           <svg
             width="100%"
             height="100%"
